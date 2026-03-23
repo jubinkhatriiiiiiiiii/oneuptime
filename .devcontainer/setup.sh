@@ -20,10 +20,6 @@ npm install
 # Make scripts executable
 chmod +x configure.sh || true
 chmod +x .devcontainer/codespaces-start.sh
-
-# Create a simple start command
-echo '#!/bin/bash
-bash .devcontainer/codespaces-start.sh' > start-codespaces.sh
 chmod +x start-codespaces.sh
 
 echo "✅ Setup complete!"

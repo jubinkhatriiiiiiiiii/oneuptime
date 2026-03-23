@@ -1,0 +1,24 @@
+# Render deployment configuration
+services:
+  - type: web
+    name: oneuptime
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 80
+      - key: ONEUPTIME_HTTP_PORT
+        value: 80
+    healthCheckPath: /
+
+databases:
+  - name: oneuptime-postgres
+    databaseName: oneuptimedb
+    user: postgres
+    plan: free
+
+  - name: oneuptime-redis
+    plan: free
