@@ -1,0 +1,32 @@
+{
+  "name": "OneUptime Development",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    }
+  },
+  "forwardPorts": [80, 3000, 5432, 6379],
+  "portsAttributes": {
+    "80": {
+      "label": "OneUptime Web",
+      "visibility": "public"
+    },
+    "3000": {
+      "label": "OneUptime App",
+      "visibility": "public"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-json",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "remoteUser": "codespace"
+}
